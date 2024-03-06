@@ -21,7 +21,8 @@ return new class extends Migration
 
             //mendefinisikan FK pada kolom level_id mengacu
             //pada kolom level_id di tabel m_level
-            $table->foreign('level_id')->references('level_id')->on('m_level');
+            $table->foreign('level_id')->references
+            ('level_id')->on('m_level');
         });
     }
 

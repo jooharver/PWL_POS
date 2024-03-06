@@ -1,4 +1,3 @@
-<!-- Views/level.blade.php -->
 
 <html>
     <head>

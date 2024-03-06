@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PenjualanDetailSeeder extends Seeder
 {
@@ -235,5 +236,6 @@ class PenjualanDetailSeeder extends Seeder
             
 
         ];
+        DB::table('t_penjualan_detail')->insert($DataPenjualanDetail);
     }
 }
