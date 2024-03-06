@@ -10,20 +10,18 @@ class UserController extends Controller
 {
     public function index(){
 
-    //    $data = [
-    //     'level_id' => 2,
-    //     'username' => 'manager_tiga',
-    //     'nama' => 'Manager 3',
-    //     'password' => Hash::make('12345')
+        // $data = [
+        //     'level_id' => 2,
+        //     'username' => 'manager_tiga',
+        //     'nama' => 'Manager 3',
+        //     'password' => Hash::make('12345')
+        // ];
 
-    //    ];
+        // UserModel::create($data);
 
-    //    UserModel::create($data);
-
-        
-       $user = UserModel::where('username', 'manager9')
-       ->firstOrFail();
-       return view('user', ['data'=> $user]);
-
+        $jumlahPengguna = UserModel::where('level_id', 2)->count();
+        dd($jumlahPengguna);
+       
+        return view('user', ['data'=> $jumlahPengguna]);
     }
 }
