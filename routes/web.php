@@ -4,6 +4,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', function () {
@@ -30,3 +31,10 @@ Route::get('/user/hapus/{id}', [UserController::class, 'hapus']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/kategori', [KategoriController::class, 'index']);
+
+Route::get('/kategori/create', [KategoriController::class, 'create']);
+
+Route::get('/kategori', [KategoriController::class, 'store']);

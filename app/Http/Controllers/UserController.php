@@ -10,7 +10,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = UserModel::with('level')->get();
+
+                $user = UserModel::with('level')->get();
         return view('user', ['data' => $user]);
     }
 
@@ -63,5 +64,14 @@ class UserController extends Controller
             return redirect('/user')->with('error', 'User not found');
         }
     }
+
+    //Praktikum 2.7
+        // $user = UserModel::with('level')->get();
+        // dd($user);
+
+
+    }
+
+
+
     
-}

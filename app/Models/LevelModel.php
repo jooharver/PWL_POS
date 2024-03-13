@@ -3,12 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class LevelModel extends Model
 {
-    public function users(): BelongsTo
+    use HasFactory;
+
+    protected $table = 'm_level';
+    protected $primaryKey = 'level_id';
+
+    public function users(): HasMany
     {
-        return $this->belongsTo(UserModel::class, 'level_id', 'level_id');
+        return $this->hasMany(UserModel::class);
     }
 }
