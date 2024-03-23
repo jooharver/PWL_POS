@@ -15,12 +15,26 @@
                 <h3 class="card-title">Buat Kategori Baru</h3>
             </div>
 
-            <form method="POST" action="../kategori">
+            <form method="post" action="../kategori">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="kodeKategori">Kode Kategori</label>
+                    <input type="text" class="form-control" id="kodeKategori" name="kodeKategori" placeholder="Untuk makanan, contoh : MKN">
+                </div>
+                <div class="form-group">
+                    <label for="namaKategori">Nama Kategori</label>
+                    <input type="text" class="form-control" id="namaKategori" name="namaKategori" placeholder="Nama">
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
             </form>
         </div>
     </div>
 @endsection
 
-@push('scripts')
+{{-- @push('scripts')
     {{ $dataTable->scripts() }}
-@endpush
+@endpush --}}
