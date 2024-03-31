@@ -42,3 +42,12 @@ Route::post('/kategori', [KategoriController::class, 'store']);
 Route::get('/edit/{id}', [KategoriController::class, 'edit'])->name('kategori.edit');
 Route::put('/update/{id}', [KategoriController::class, 'update'])->name('kategori.update');
 Route::get('/delete/{id}', [KategoriController::class, 'destroy'])->name('kategori.delete');
+
+//Manage User
+Route::get('/user/create', [UserController::class, 'create'])->name('/user/create');
+Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('/user/edit');
+Route::get('/user', [UserController :: class, 'index'])->name('user.index');
+Route::post('/user', [UserController :: class, 'store']);
+Route::put('/user/{id}', [UserController :: class, 'edit_simpan'])->name('/user/edit_simpan');
+Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('/user/delete');
+
