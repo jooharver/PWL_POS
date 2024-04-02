@@ -51,3 +51,18 @@ Route::post('/user', [UserController :: class, 'store']);
 Route::put('/user/{id}', [UserController :: class, 'edit_simpan'])->name('/user/edit_simpan');
 Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('/user/delete');
 
+// Manage Level
+Route::get('/level', [LevelController::class, 'index'])->name('level.index');
+Route::get('/level/create', [LevelController::class, 'create'])->name('/level/create');
+Route::post('/level', [LevelController::class, 'store']);
+Route::get('/level/edit/{id}', [LevelController::class, 'edit'])->name('/level/edit');
+Route::put('/level/{id}', [LevelController::class, 'edit_simpan'])->name('/level/edit_simpan');
+Route::get('/level/delete/{id}', [LevelController::class, 'delete'])->name('/level/delete');
+
+// Manage Level
+// Route::get('/level', [LevelController::class, 'index'])->name('level.index');
+// Route::get('/level/create', [LevelController::class, 'create'])->name('level.create');
+// Route::post('/level', [LevelController::class, 'store']);
+// Route::get('/level/edit/{id}', [LevelController::class, 'edit'])->name('level.edit');
+// Route::put('/level/edit_simpan/{id}', [LevelController::class, 'edit_simpan'])->name('level.edit_simpan');
+// Route::get('/level/delete/{id}', [LevelController::class, 'delete'])->name('level.delete');
