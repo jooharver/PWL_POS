@@ -328,8 +328,8 @@ return [
             'icon' => 'far fa-fw fa-folder',
         ],
         [
-            'text' => 'Manage User',
-            'url' => '/user',
+            'text' => 'Manage m_user',
+            'url' => 'm_user',
             'icon' => 'fas fa-user-plus',
         ],
         [
