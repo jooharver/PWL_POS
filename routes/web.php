@@ -3,6 +3,7 @@
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\POSController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -58,6 +59,8 @@ Route::post('/level', [LevelController::class, 'store']);
 Route::get('/level/edit/{id}', [LevelController::class, 'edit'])->name('/level/edit');
 Route::put('/level/{id}', [LevelController::class, 'edit_simpan'])->name('/level/edit_simpan');
 Route::get('/level/delete/{id}', [LevelController::class, 'delete'])->name('/level/delete');
+
+Route::resource('m_user', POSController::class );
 
 // Manage Level
 // Route::get('/level', [LevelController::class, 'index'])->name('level.index');

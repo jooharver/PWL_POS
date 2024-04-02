@@ -28,15 +28,13 @@ class KategoriController extends Controller
      */
     public function store(Request $request): RedirectResponse {
 
-<<<<<<< HEAD
+
         // $validated = $request->validate();
 
         // $validated = $request->safe()->only(['kategori_kode', 'kategori_nama']);
         // $validated = $request->safe()->except(['kategori_kode', 'kategori_nama']);
 
-
-=======
->>>>>>> 5b0beba1b80bf2367518b71b5623e0ecb8a73266
+        
         $request->validate([
             'kodeKategori' => 'bail|required|unique:posts|max:255',
             'namaKategori' => 'bail|required|unique:posts|max:255',

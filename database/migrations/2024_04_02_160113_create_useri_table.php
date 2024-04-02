@@ -12,22 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('useri', function (Blueprint $table) {
-            $table->id('user_id');
-
-            /**
-             * Indexing foreign key
-             */
-            $table->unsignedBigInteger('level_id')->index()->nullable();
-
-            $table->string('username', 20)->unique();
-            $table->string('nama', 100);
-            $table->string('password');
+            $table->id();
             $table->timestamps();
-
-            /**
-             * Define Foreign key('level_id') from useri table
-             */
-            $table->foreign('level_id')->references('level_id')->on('m_level');
         });
     }
 
