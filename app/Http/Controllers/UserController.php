@@ -6,6 +6,7 @@ use App\Models\UserModel;
 use App\DataTables\UserDataTable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\RedirectResponse;
 
 class UserController extends Controller
 {
@@ -21,6 +22,12 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'username' => 'required',
+            'namaUser' => 'required',
+            'level_id' => 'required',
+        ]);
+
         UserModel::create([
             'user_username' => $request->username,
             'user_nama' => $request->namaUser,

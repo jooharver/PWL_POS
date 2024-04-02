@@ -4,6 +4,7 @@ use App\DataTables\KategoriDataTable;
 use App\Models\Kategori;
 use App\Models\KategoriModel;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class KategoriController extends Controller
 {
@@ -25,7 +26,19 @@ class KategoriController extends Controller
     /**
      * Create a new row from input req form
      */
-    function store(Request $request) {
+    public function store(Request $request): RedirectResponse {
+
+        // $validated = $request->validate();
+
+        // $validated = $request->safe()->only(['kategori_kode', 'kategori_nama']);
+        // $validated = $request->safe()->except(['kategori_kode', 'kategori_nama']);
+
+
+        $request->validate([
+            'kodeKategori' => 'bail|required|unique:posts|max:255',
+            'namaKategori' => 'bail|required|unique:posts|max:255',
+        ]);
+
         KategoriModel::create([
             'kategori_kode' => $request->kodeKategori,
             'kategori_nama' => $request->namaKategori,
