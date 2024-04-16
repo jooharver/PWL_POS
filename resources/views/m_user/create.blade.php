@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('subtitle', 'M_User')
-@section('content_header_title', 'M_User')
+@section('content_header_title', 'M_Userrrrr')
 @section('content_header_subtitle', 'Create')
 @section('content')
 <div class="card card-info">

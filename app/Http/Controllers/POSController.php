@@ -8,6 +8,7 @@ use App\Models\m_user;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class POSController extends Controller
 {
@@ -52,9 +53,16 @@ class POSController extends Controller
      */
     public function show(string $id): View
     {
-        $useri = m_user::findOrFail($id);
-        $useri = m_user::findOrFail($id)->load('level');
-        return view('m_user.show', compact('useri'));
+        try {
+            $useri = m_user::findOrFail($id)->load('level');
+            return view('m_user.show', compact('useri'));
+        } catch (ModelNotFoundException $e) {
+            abort(404); // Melemparkan tampilan 404 jika pengguna tidak ditemukan
+        }
+        
+        // $useri = m_user::findOrFail($id);
+        // $useri = m_user::findOrFail($id)->load('level');
+        // return view('m_user.show', compact('useri'));
     }
 
     /**
