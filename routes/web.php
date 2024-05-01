@@ -9,7 +9,7 @@ use App\Http\Controllers\KategoriResourceController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LevelResourceController;
-
+use App\Http\Controllers\BarangResourceController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -87,3 +87,9 @@ Route::post('level/list', [LevelResourceController::class, 'list']);
 
 Route::resource('kategori', KategoriResourceController::class);
 Route::post('kategori/list', [KategoriResourceController::class, 'list']);
+
+/**
+ * Route for Resource in Level table: create, store, show, edit, update, and destroy, also with list that return JsonResponse
+ */
+Route::resource('barang', BarangResourceController::class);
+Route::post('barang/list', [BarangResourceController::class, 'list']);
