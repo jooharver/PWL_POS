@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LevelResourceController;
 use App\Http\Controllers\BarangResourceController;
+use App\Http\Controllers\StokResourceController;
+use App\Http\Controllers\TransaksiPenjualanResourceController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -93,3 +96,16 @@ Route::post('kategori/list', [KategoriResourceController::class, 'list']);
  */
 Route::resource('barang', BarangResourceController::class);
 Route::post('barang/list', [BarangResourceController::class, 'list']);
+
+/**
+ * Route for Resource in stok table: create, store, show, edit, update, and destroy, also with list that return JsonResponse
+ */
+Route::resource('stok', StokResourceController::class);
+Route::post('stok/list', [StokResourceController::class, 'list']);
+
+
+/**
+ * Route for Resource Transaksi Penjualan (t_penjualan and t_penjualan_detail table): create, store, show, edit, update, and destroy, also with list that return JsonResponse
+ */
+Route::resource('penjualan', TransaksiPenjualanResourceController::class);
+Route::post('penjualan/list', [TransaksiPenjualanResourceController::class, 'list']);
