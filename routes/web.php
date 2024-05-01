@@ -5,6 +5,7 @@ use App\Http\Controllers\LevelController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\POSController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KategoriResourceController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LevelResourceController;
@@ -82,5 +83,7 @@ Route::group(['prefix' => 'user'], function () {
 
 
 Route::resource('level', LevelResourceController::class);
-
 Route::post('level/list', [LevelResourceController::class, 'list']);
+
+Route::resource('kategori', KategoriResourceController::class);
+Route::post('kategori/list', [KategoriResourceController::class, 'list']);
